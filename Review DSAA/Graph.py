@@ -3,9 +3,15 @@ class Graph:
         self.graph = {}
     
     def add_edge(self, u, v):
+        '''
+        indirected Graph so append list adj for both
+        '''
         if u not in self.graph:
             self.graph[u] = []
+        if v not in self.graph:
+            self.graph[v] = []
         self.graph[u].append(v)
+        self.graph[v].append(u)
 
 def main():
     G = Graph()
